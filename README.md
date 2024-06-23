@@ -21,7 +21,7 @@ An simple application written in Python to track IT Assets in a no-sql database 
             +String memory_gb
             +String manufacturer
             +Disk boot_volume
-            +NetworkAdapter nic
+            +List NetworkAdapter nic
             +List Disk additionalDisks
             +OperatingSystem os
             +is_active()

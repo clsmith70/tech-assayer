@@ -4,6 +4,8 @@ An simple application written in Python to track IT Assets in a no-sql database 
 
 ## Object definitions
 
+### Primary objects
+
 ```mermaid
     classDiagram
         Laptop <|-- Computer
@@ -18,12 +20,14 @@ An simple application written in Python to track IT Assets in a no-sql database 
         
         class Computer{
             +String processor
+            +String architecture
             +String memory_gb
             +String manufacturer
             +Disk boot_volume
             +List NetworkAdapter nic
             +List Disk additionalDisks
             +OperatingSystem os
+            +List Application application
             +is_active()
             +is_decommissioned()
         }
@@ -36,7 +40,12 @@ An simple application written in Python to track IT Assets in a no-sql database 
             +get_ip()
             +get_mac()
         }
+```
 
+### Secondary objects
+
+```mermaid
+    classDiagram
         class Disk {
             +String capacity
             +String format
@@ -48,6 +57,13 @@ An simple application written in Python to track IT Assets in a no-sql database 
             +String version
             +DateTime endOfSupport
             +DateTime endOfLife
+            +String manufacturer
+        }
+
+        class Application {
+            +String name
+            +String version
+            +String architecture
             +String manufacturer
         }
 ```
